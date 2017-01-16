@@ -1,0 +1,34 @@
+* {
+	box-sizing: border-box;
+	
+}
+
+body {
+	font-family: 'Rubik', sans-serif;
+}
+
+.jumbotron {
+	text-align: center;
+	margin: 40px;
+}
+
+h1 {
+	font-family: 'Bungee Shade', cursive;
+}
+
+#resultTable {
+	float: left;
+}
+
+#formInput {
+	font-family: 'Montserrat', sans-serif;
+	float: left;
+	margin: 40px;
+}
+
+#musicInput {
+	font-family: 'Montserrat', sans-serif;
+	float: right;	
+	margin: 40px;
+}
+
