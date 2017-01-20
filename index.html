@@ -11,6 +11,16 @@
   	<link rel="stylesheet" href="assets/css/reset.css">
   	<link rel="stylesheet" href="assets/css/style.css">
 
+  	<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+	<!-- <script src="assets/js/moment.js"></script> -->
+  	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<!-- <script type="text/javascript">
+	   $(function(){
+	      alert("My First Jquery Test");
+	   });
+	</script> -->
+	<script src="assets/js/week8.js"></script>
+  	
 </head>
 <body>
 
@@ -28,22 +38,16 @@
 		<div class="row">
 	        <div class="col-sm-6 col-sm-offset-3">
 
-	        
-
 				<div class="input-group">
       				<input type="text" class="form-control" placeholder="Search for a place to nap...">
       			<span class="input-group-btn">
         			<button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-search"></span></button>
       			</span>
     			</div>
-  			</div>
-
-
-	            
-	        </div>
-		</div>
-
-		
+  			     
+	        </div> <!-- end of div class="col-sm-6 col-sm-offset-3" -->
+		</div> <!-- end of div class="row" -->
+	
 
 	<!-- map results will go here -->
 		<div class="row">
@@ -71,8 +75,8 @@
 				      <th>Comments</th>
 				    </tr>
 				  </thead>
-				  <tbody>
-				    <tr id="places">
+				  <tbody id="places">
+				    <tr>
 				      <td>Friday Center</td>
 				      <td>100 Friday Center Drive, Chapel Hill, NC 27517</td>
 				      <td>5</td>
@@ -96,10 +100,6 @@
 				    	<td>4</td>
 				    	<td>Benches, cool flora, chipmunks can be used as a pillow at your own risk</td>
 				    </tr>
-					
-
-
-
 				    
 				  </tbody>
 				</table> 
@@ -120,8 +120,8 @@
 
 			<form>
 				<div class="form-group">
-    				<label for="formGroupExampleInput">Your Name:</label>
-    				<input type="text" class="form-control" id="inputName" placeholder="Your Name">
+    				<label for="formGroupExampleInput">Name of Napping Place:</label>
+    				<input type="text" class="form-control" id="inputName" placeholder="Name of place to nap">
   				</div>
 
   				<div class="form-group">
@@ -153,41 +153,28 @@
 					          <option>5</option>
 					        </select>
 					        
-					      </div>
-					    </div>
+					      </div> <!-- div class="col-lg-10" -->
+				</div> <!-- end of div class="form-group"-->
+
+
 					    
 				
 				<div class="form-group">
 					<div>
 					    <button type="submit" class="btn btn-primary" id="addNap">Submit</button>
 					</div>
-				</div>
-					  <!-- </fieldset> -->
-			</form>
-
-  				</div>
-			</div>
-
-		</div>
-
-		
-
-
-			</form>
-
-
-
-
-
-
-
-
-
-
+				</div> <!-- div class="form-group" -->
 				
-					
-					    
-		
+			</form>
+				</div> <!-- div class="panel-body" -->
+
+  				</div> <!-- div class="panel panel-primary" -->
+			</div> <!-- div class="col-sm-5 col-xs-4" id="formInput" -->
+
+		</div> <!-- end of div class="row" -->
+
+
+
 
 		<!-- music will go here -->
 			<div class="col-sm-5 col-xs-4" id="musicInput">
@@ -197,24 +184,26 @@
     			<h3 class="panel-title">Music <span class="glyphicon glyphicon-music"></span></h3>
   				</div>
 
-  				<div class="panel-body" id="player-div">
-    			<audio controls>
-  					<source src="horse.ogg" type="audio/ogg">
-  					<source src="horse.mp3" type="audio/mpeg">
-					Your browser does not support the audio element.
-				</audio>
-  				</div>
-			</div>
+	  				<div class="panel-body" id="player-div">
 
-			</div>
-		</div>
+
+	    			<!-- <audio controls>
+	  					<source src="horse.ogg" type="audio/ogg">
+	  					<source src="horse.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio> -->
+
+
+	  				</div> <!-- end of div class="panel-body" id="player-div"-- >
+			</div> <!-- div class="panel panel-primary" -- >
+
+			</div> <!-- div class="col-sm-5 col-xs-4" id="musicInput" -- >
+	
 
 	</div>   <!-- end of container -- >
 
-	<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
-	<script src="assets/js/moment.js"></script>
-	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  	<script src="assets/js/week8.js"></script>
 
+
+	
 </body>
 </html>

@@ -1,4 +1,8 @@
 
+// $( document ).ready(function() {
+//     console.log( "ready!" );
+// });
+
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBdt5lhNaTHcvEbf4BmBAqWDvPNBf8gdz4",
@@ -19,49 +23,71 @@ var email = "";
 var rating = "";
 var comments = "";
 
-//capture submit button click
-$("#addNap").on("click", function(){
 
-	name = $("#inputName").val().trim();
-	address = $("#inputAddress").val().trim();
-	email = $("#inputEmail").val().trim();
-	rating = $("#inputRating").val();
-	comments = $("#inputComment").val().trim();
+$(document).ready(function(){
+	$("#addNap").on("click", function(e){
+		e.preventDefault();
+		console.log("button clicked");
 
-	//code for the push to database
-	dataRef.ref().push({
-		name: name,
-		address: address,
-		email: email,
-		rating: rating
+		name = $("#inputName").val().trim();
+		address = $("#inputAddress").val().trim();
+		email = $("#inputEmail").val().trim();
+		rating = $("#inputRating").val();
+		comments = $("#inputComment").val().trim();
+
+		//code for the push to database
+		dataRef.ref().push({
+			name: name,
+			address: address,
+			email: email,
+			rating: rating,
+			comments: comments
+		});
+
+		console.log("------from click function-------");
+		console.log(name);
+		console.log(address);
+		console.log(email);
+		console.log(rating);
+		console.log(comments);
+		console.log("------------------");
+
+		//clear data
+		$("#inputName").val("");
+		$("#inputAddress").val("");
+		$("#inputEmail").val("");
+		$("#inputRating").val("");
+		$("#inputComment").val("");
+
+
+		return false;
 	});
 
-	return false;
-});
+})
+//capture submit button click
 
-//firebase: initial loader, adding child
+//firebase: initial loader, adding child, appending to table
 
 dataRef.ref().on("child_added", function(childSnapshot) {
-	//loggive everything
+	//console everything
+	console.log("-------child Snapshot--------")
 	console.log(childSnapshot.val().name);
 	console.log(childSnapshot.val().address);
 	console.log(childSnapshot.val().email);
 	console.log(childSnapshot.val().rating);
+	console.log(childSnapshot.val().comments);
+	console.log("------------------");
 
 	//adding items to the html
 	var addPlace = $("#places");
 
 	var placeData = "<tr>";
-	    trainData += "<td>" + childSnapshot.val().name + "</td>";
-	    trainData += "<td>" + childSnapshot.val().address + "</td>";
-	    trainData += "<td>" + childSnapshot.val().email + "</td>";
-	    trainData += "<td>" + childSnapshot.val().rating + "</td>"
-	    trainData += "</tr>";
+	    placeData += "<td>" + childSnapshot.val().name + "</td>";
+	    placeData += "<td>" + childSnapshot.val().address + "</td>";
+	    placeData += "<td>" + childSnapshot.val().rating + "</td>";
+	    placeData += "<td>" + childSnapshot.val().comments + "</td>"
+	    placeData += "</tr>";
 
-	addPlace.append(placeData);
-
-
-
-
-	$("#places").append("<div class")
+	$(addPlace).append(placeData);
 });
+
