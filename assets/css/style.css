@@ -17,17 +17,16 @@ h1 {
 }
 
 #resultTable {
-	float: left;
+	margin: 20px;
+	
 }
 
 #formInput {
-	font-family: 'Montserrat', sans-serif;
 	float: left;
 	margin: 40px;
 }
 
 #musicInput {
-	font-family: 'Montserrat', sans-serif;
 	float: right;	
 	margin: 40px;
 }

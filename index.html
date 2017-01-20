@@ -31,12 +31,12 @@
 	        
 
 				<div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-search"></span></button>
-      </span>
-    </div>
-  </div>
+      				<input type="text" class="form-control" placeholder="Search for a place to nap...">
+      			<span class="input-group-btn">
+        			<button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+      			</span>
+    			</div>
+  			</div>
 
 
 	            
@@ -59,23 +59,48 @@
 
 	<!-- field where latest results are shown populated from form -->
 		<div class="row" id="resultTable">
-			<div class="col-sm-12 col-sm-offset-2">
+			<div class="col-sm-12">
 				<table class="table table-striped table-hover ">
+				
 				  <thead>
+				  	<tr class="success"><h3>Favorite Places to Nap:</h3></tr>
 				    <tr class="success">
-				      <th>#</th>
+				      <th>Name</th>
 				      <th>Location</th>
 				      <th>Rating</th>
 				      <th>Comments</th>
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <td>1</td>
+				    <tr id="places">
+				      <td>Friday Center</td>
 				      <td>100 Friday Center Drive, Chapel Hill, NC 27517</td>
-				      <td>5 stars</td>
+				      <td>5</td>
 				      <td>Comfortable chairs, lots of different places to get away from people</td>
 				    </tr>
+				    <tr>
+				    	<td>UNC Student Union</td>
+				    	<td>3103 South Rd, Chapel Hill, NC 27599</td>
+				    	<td>5</td>
+				    	<td>Downstairs has the best nap spots</td>
+				    </tr>
+				    <tr>
+				    	<td>Polk Place</td>
+				    	<td>University of North Carolina, Chapel Hill, NC 27599</td>
+				    	<td>5</td>
+				    	<td>Outdoor park area with benches and a racist statue</td>
+				    </tr>
+				    <tr>
+				    	<td>Coker Arboretum</td>
+				    	<td>399 E Cameron Ave, Chapel Hill, NC 27514</td>
+				    	<td>4</td>
+				    	<td>Benches, cool flora, chipmunks can be used as a pillow at your own risk</td>
+				    </tr>
+					
+
+
+
+				    
 				  </tbody>
 				</table> 
 			</div>
@@ -83,7 +108,7 @@
 
 	<!-- adding new addresses/rating -->
 		<div class="row">
-			<div class="col-sm-5" id="formInput">
+			<div class="col-sm-5 col-xs-4" id="formInput">
 
 			<div class="panel panel-primary">
   				<div class="panel-heading">
@@ -93,44 +118,34 @@
   				<div class="panel-body">
 
 
-				<form class="form">
-					  <fieldset>
-					    
-					    <div class="form-group">
-					    <span class="help-block">Enter in the address</span>
-					    <label for="inputAddress" class="col-lg-2 control-label">Address</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" id="inputAddress" placeholder="Address">
-					      </div>
-					      
-					    </div>
+			<form>
+				<div class="form-group">
+    				<label for="formGroupExampleInput">Your Name:</label>
+    				<input type="text" class="form-control" id="inputName" placeholder="Your Name">
+  				</div>
 
-					     <div class="form-group">
-					      <label for="inputZip" class="col-lg-2 control-label">Zip Code</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" id="inputZip" placeholder="Zip">
-					      </div>
-					    </div>
+  				<div class="form-group">
+    				<label for="formGroupExampleInput">Address of Napping Place:</label>
+    				<input type="text" class="form-control" id="inputAddress" placeholder="Street, State, Zip Code">
+  				</div>
+  				<div class="form-group">
+    				<label for="formGroupExampleInput2">Your email:</label>
+    				<input type="text" class="form-control" id="inputEmail" placeholder="Your email">
+  				</div>
 
-					    <div class="form-group">
-					      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-					      <div class="col-lg-10">
-					        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-					      </div>
-					    </div>
-					    
-					    <div class="form-group">
-					      <label for="textArea" class="col-lg-2 control-label">Comments</label>
-					      <div class="col-lg-10">
-					        <textarea class="form-control" rows="3" id="textArea"></textarea>
-					      </div>
-					    </div>
-					    <br>
-					    <div class="form-group">
+  				<div class="form-group">
+  					<label for="comment">Comments:</label>
+  					<textarea class="form-control" rows="3" id="inputComment" placeholder="Add comments about your experience"></textarea>
+				</div>
+
+  				<!-- add comment field to populate -->
+
+  				<br>
+				<div class="form-group">
 					    	<span class="help-block">On a scale of 1 to 5, with 1 being not very safe and 5 being safe, how would you rate this space?</span>
 					      <label for="select" class="col-lg-2 control-label">Rate</label>
 					      <div class="col-lg-10">
-					        <select class="form-control" id="select">
+					        <select class="form-control" id="inputRating">
 					          <option>1</option>
 					          <option>2</option>
 					          <option>3</option>
@@ -140,29 +155,49 @@
 					        
 					      </div>
 					    </div>
-					    <div class="form-group">
-					      <div class="col-lg-10 col-lg-offset-2">
-					        <button type="submit" class="btn btn-primary">Submit</button>
-					      </div>
-					    </div>
-					  </fieldset>
-					</form>
+					    
+				
+				<div class="form-group">
+					<div>
+					    <button type="submit" class="btn btn-primary" id="addNap">Submit</button>
+					</div>
+				</div>
+					  <!-- </fieldset> -->
+			</form>
 
   				</div>
 			</div>
 
-			</div>
+		</div>
+
+		
+
+
+			</form>
+
+
+
+
+
+
+
+
+
+
+				
+					
+					    
 		
 
 		<!-- music will go here -->
-			<div class="col-sm-5" id="musicInput">
+			<div class="col-sm-5 col-xs-4" id="musicInput">
 
 			<div class="panel panel-primary">
   				<div class="panel-heading">
     			<h3 class="panel-title">Music <span class="glyphicon glyphicon-music"></span></h3>
   				</div>
 
-  				<div class="panel-body">
+  				<div class="panel-body" id="player-div">
     			<audio controls>
   					<source src="horse.ogg" type="audio/ogg">
   					<source src="horse.mp3" type="audio/mpeg">
