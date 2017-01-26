@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    
+
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 80%;
+        width: 80%;
+      }
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+    </style>
+    <title>Places Searchbox</title>
+    <style>
+      #target {
+        width: 345px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+
+  <!-- adding new addresses/rating -->
+    <div class="row">
+      <div class="col-lg-5 col-sm-6 col-xs-4" id="formInput">
+
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+          <h3 class="panel-title">Add your favorite nap place</h3>
+          </div>
+
+          <div class="panel-body">
+
+
+      <form>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Name of Napping Place:</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Name of place to nap">
+          </div>
+
+          <div class="form-group">
+            <label for="formGroupExampleInput">Address of Napping Place:</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Street, State, Zip Code">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Your email:</label>
+            <input type="text" class="form-control" id="inputEmail" placeholder="Your email">
+          </div>
+
+          <div class="form-group">
+            <label for="comment">Comments:</label>
+            <textarea class="form-control" rows="3" id="inputComment" placeholder="Add comments about your experience"></textarea>
+        </div>
+
+          <!-- add comment field to populate -->
+
+          <br>
+        <div class="form-group">
+                <span class="help-block">On a scale of 1 to 5, with 1 being not very safe and 5 being safe, how would you rate this space?</span>
+                <label for="select" class="col-lg-2 control-label">Rate</label>
+                <div class="col-lg-10">
+                  <select class="form-control" id="inputRating">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  
+                </div> <!-- div class="col-lg-10" -->
+        </div> <!-- end of div class="form-group"-->
+
+
+              
+        
+        <div class="form-group">
+          <div>
+              <button type="submit" class="btn btn-primary" id="addNap">Submit</button>
+          </div>
+        </div> <!-- div class="form-group" -->
+        
+      </form>
+        </div> <!-- div class="panel-body" -->
+
+          </div> <!-- div class="panel panel-primary" -->
+      </div> <!-- div class="col-sm-5 col-xs-4" id="formInput" -->
+
+    </div> <!-- end of div class="row" -->
+
+
+    
+  </body>
+
+<script src="googlemap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0FH_7QiSLiwrknyXw3IBL35oEUPJ1tX8&libraries=places&callback=initAutocomplete"
+         async defer></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+  
+</html>
+
+
+
+
+
+
