@@ -1,10 +1,12 @@
 * {
 	box-sizing: border-box;
-	
 }
 
 body {
 	font-family: 'Rubik', sans-serif;
+/*	height: 100%;
+    margin: 0;
+    padding: 0;*/
 }
 
 .jumbotron {
@@ -16,20 +18,76 @@ h1 {
 	font-family: 'Bungee Shade', cursive;
 }
 
+#startText {
+	text-align: center;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
 #resultTable {
-	margin: 20px;
-	
+	margin: 20px;	
 }
 
 #formInput {
 	float: left;
-	margin: 20px;
-	border-right: 10px;
+	margin: 40px;
 }
 
 #musicInput {
 	float: right;	
-	margin: 20px;
-	border-left: 10px;
+	margin: 40px;
+}
+
+/* preezy's style */
+
+#target {
+        width: 345px;
+      }
+
+#map {
+        height: 80%;
+        width: 80%;
+        background-color: grey;
+      }
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
 }
 
