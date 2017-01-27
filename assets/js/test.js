@@ -1,5 +1,3 @@
-
-
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBdt5lhNaTHcvEbf4BmBAqWDvPNBf8gdz4",
@@ -127,16 +125,12 @@ dataRef.ref().on("child_added", function(childSnapshot) {
            // (NOTE YOU NEED TO BE LOGGED INTO SPOTIFY)or have a spotify webpage open in background for 30sec song
          
 
-           var player = ["<iframe src='https://embed.spotify.com/?uri=spotify:track:" +
-            trackResponse.tracks[0].id +
-            "' frameborder='0' allowtransparency='true'></iframe>","<iframe src='https://embed.spotify.com/?uri=spotify:track:" +
-            trackResponse.tracks[1].id +
-            "' frameborder='0' allowtransparency='true'></iframe>","<iframe src='https://embed.spotify.com/?uri=spotify:track:" +
-            trackResponse.tracks[2].id +
-            "' frameborder='0' allowtransparency='true'></iframe>"];
+           var player = "<iframe src='https://embed.spotify.com/?uri=spotify:track:" +
+             trackResponse.tracks[0].id +
+             "' frameborder='0' allowtransparency='true'></iframe>";
 
-          // Appending the new player into the HTML
-          $("#player-div").html(player);
+           // Appending the new player into the HTML
+           $("#player-div").append(player);
          });
        });
      }
@@ -228,16 +222,17 @@ dataRef.ref().on("child_added", function(childSnapshot) {
 // This example adds a search box to a map, using the Google Place Autocomplete
 // feature. People can enter geographical searches. The search box will return a
 // pick list containing a mix of places and predicted search terms.
+
+$(document).ready(function(){
+
 function initAutocomplete() {
+
    console.log("Inside the map function!");
-    map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 35.8999416, lng: -79.0147377},
     zoom: 14,
     mapTypeId: 'roadmap'
-
-
   });
-
   
  
 
@@ -252,7 +247,6 @@ function initAutocomplete() {
               
               label: 'Friday Center'
         },
-
         {
            position: {lat: 35.9134642, lng: -79.0573057}, 
           
@@ -339,12 +333,6 @@ function initAutocomplete() {
   // [END region_getplaces]
 }
 
-
-
-$(document).ready(function(){
-
-
-
 var infoWindow = new google.maps.InfoWindow({map: map});
 // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -373,16 +361,3 @@ var infoWindow = new google.maps.InfoWindow({map: map});
                               'Error: Your browser doesn\'t support geolocation.');
       }
     });
-
-//appML
-
-  var dataObj = {
-      "records":[
-      {"Co-Creator":"Melissa Munson","Home State":"Virginia","Favorite Nap Spot":"Her own bed"},
-      {"Co-Creator":"Tripp Brogden","Home State":"North Carolina","Favorite Nap Spot":"Libraries and Parks"},
-      {"Co-Creator":"Preezy P","Home State":"North Carolina","Favorite Nap Spot":"couch"}
-  ]};
-
-
-
-
