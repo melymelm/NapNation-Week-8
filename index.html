@@ -12,22 +12,28 @@
 	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Rubik" rel="stylesheet">
     <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
   	<link rel="stylesheet" href="assets/css/reset.css">
   	<link rel="stylesheet" href="assets/css/style.css">
-  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0FH_7QiSLiwrknyXw3IBL35oEUPJ1tX8&libraries=places&callback=initAutocomplete"
-         async defer></script>
+
+  	<script src="http://www.w3schools.com/appml/2.0.3/appml.js"></script>
+  	
 
   	<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
 	<!-- <script src="assets/js/moment.js"></script> -->
   	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
 	<script src="assets/js/week8.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0FH_7QiSLiwrknyXw3IBL35oEUPJ1tX8&libraries=places&callback=initAutocomplete" defer></script>
+
   	
 </head>
 <body>
 
 <!-- Header  -->
 	<div class="jumbotron" id="header">
-	  <h1>Nap Nation</h1>
+	  <h1>Nap <img src="assets/images/sleep.png" alt="" class="circle responsive-img"> Nation</h1>
 	  <h2><p>When you just need a power nap, but don't have time to go home.</p></h2>
 	</div>
 
@@ -35,41 +41,35 @@
 	<div class="container-fluid">
 
 
-	<!-- search bar -->
+	<!-- text blurb -->
+
+
+	
+
 		<div class="row">
 
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 				<div class="panel panel-default">
 					  <div class="panel-body" id="startText">
-					    <p><h2>Want to find a napping place near where you are right at this moment? Fill in the address in the box below, and we'll show you some places nearby!</h2></p>
+					    <div class="background">
+  							<div class="transbox">
+    							<p>Want to find a napping place near where you are right at this moment? Fill in the address in the box below, and we'll show you some places nearby!</p>
+  							</div>
+						</div>
 					  </div>
 				</div>
 			</div>
-			
-
-			<input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    			<div id="map"></div>
-	       <!--  <div class="col-sm-6 col-sm-offset-3">
-				<div class="input-group">
-      				<input type="text" class="form-control" placeholder="Where are you? Just enter that address...">
-      			<span class="input-group-btn">
-        			<button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-search"></span></button>
-      			</span>
-    			</div>
-  			     
-	        </div> --> <!-- end of div class="col-sm-6 col-sm-offset-3" -->
 		</div> <!-- end of div class="row" -->
+			
+			<!-- map goes here -->
+			<div class="row">
+				<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+	    			<div id="map"></div>
+	    	
+
+				</div> <!-- end of div class="row" -->
 	
 
-	<!-- map results will go here -->
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3">
-				<div class="panel panel-default" id="mapResults">
-  					<input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    				<div id="map"></div>
-				</div>
-			</div>
-		</div>
 
 
 	<!-- field where latest results are shown populated from form -->
@@ -141,8 +141,14 @@
   				</div>
   				<div class="form-group">
     				<label for="formGroupExampleInput2">Your email:</label>
-    				<input type="text" class="form-control" id="inputEmail" placeholder="Your email">
+	    				<input type="text" class="form-control" id="inputEmail" placeholder="Your email">
+    			<!-- <form>
+						 <input type="email" placeholder="me@example.com">
+						 <input type="submit">
+					</form> -->
   				</div>
+				
+  					
 
   				<div class="form-group">
   					<label for="comment">Comments:</label>
@@ -182,7 +188,7 @@
   				</div> <!-- div class="panel panel-primary" -->
 			</div> <!-- div class="col-sm-5 col-xs-4" id="formInput" -->
 
-		
+		</form>
 
 
 
@@ -198,7 +204,7 @@
 			<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->	
   			<!-- work on this later: need a submit button, need to figure out form better so it looks like other one -->
 
-				<form>
+			<form>
 				<div class="form-group">
 
 				<!-- Spotify Player Goes Here -->
@@ -210,40 +216,13 @@
 				   <label for="artist-input">Choose Your Artist</label>
 
 				   <!-- Text Input Box -->
-				   <input type="text" id="artist-input"><br>
+				   <input type="text" id="artist-input" placeholder="Type in an artist here"><br>
 
 				   <!-- Submit Button -->
-				   <input id="select-artist" type="submit" value="GO!">
+				   <input type="submit" class="btn btn-primary" id="select-artist" value="Search Music">
 				</form>
 
-				<!--Playlist option, not using -->
-  				<!-- <br>
-			      <label for="formGroupExampleInput">What kind of playlist would you like to listen to?</label>
-			        	<div class="radio">
-			          		<label>
-			            		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-			            		Classical Music
-			          			</label>
-			        	</div>
-			        	<div class="radio">
-			          		<label>
-			            		<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-			            		Chill Out and Ambient
-			          		</label>
-			        	</div>
-			        	<div class="radio">
-			          		<label>
-			            		<input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-			            		World Music
-			          		</label>
-			        	</div>
-			        	<div>
-					    <button type="submit" class="btn btn-primary" id="addPlayList">Submit</button>
-						</div>
-			      	</div> -->
-			    <!--end of playlist option-->
-
-			    </form>
+			</form>
 
 			<!-- end of needs work section -->
 			<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
@@ -258,7 +237,24 @@
 
 	</div>   <!-- end of container -- >
 
+	<!-- footer -->
 
+		<h1>The Creators of Nap Nation</h1>
+
+		<table appml-data="dataObj">
+		  <tr>
+		    <th><b>Co-Creator</b></th>
+		    <th><b>Home State</b></th>
+		    <th><b>Favorite Nap Spot</b></th>
+		  </tr>
+		  <tr appml-repeat="records">
+		    <td>{{Co-Creator}}</td>
+		    <td>{{Home State}}</td>
+		    <td>{{Favorite Nap Spot}}</td>
+		  </tr>
+		</table>
+
+	
 
 	
 </body>
